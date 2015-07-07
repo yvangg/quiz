@@ -30,3 +30,9 @@ header, nav, section, footer {
 nav span{
 	margin: 0px 10px 0px 0px;
 }
+
+img#profile {
+	width: 25%;
+	height: auto;
+	margin-top : 10px;
+}

@@ -9,7 +9,7 @@ body {
 nav {
 	float: left;
 	width: 15%;
-	height: 200px;
+	height: 250px;
 }
 nav span {
 	margin: 0px 100px 0px 0px;	
@@ -18,7 +18,7 @@ nav span {
 section {
 	float: right;
 	width: 80%;
-	height: 200px;
+	height: 250px;
 }
 
 footer {
@@ -28,4 +28,11 @@ footer {
 
 footer ul {
 	list-style: none;
+}
+
+img#profile {
+	min-width: 150px;
+	width: 15%;
+	height: auto;
+	margin-top : 10px;
 }
