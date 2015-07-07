@@ -25,3 +25,7 @@ footer {
 	clear: both;
 	display: block;
 }
+
+footer ul {
+	list-style: none;
+}

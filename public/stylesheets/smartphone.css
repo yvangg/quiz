@@ -1,6 +1,7 @@
 body {
 	background: #333;
 }
+
 #page-wrap:after {
 	content: "Smartphone Layout";
 }
