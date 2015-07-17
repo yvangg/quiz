@@ -31,8 +31,9 @@ exports.answer = function (req, res) {
 };
 
 //GET /quizes
-exports.index = function(req, res) {
-	models.Quiz.findAll().then(function(quizes) {
+exports.index = function(req, res) {		
+	var search = req.query.search ? '%'+req.query.search+'%' : '%';
+	models.Quiz.findAll({where: ["pregunta like ?", search]}).then(function(quizes) {
 		res.render('quizes/index.ejs', {quizes: quizes});
 	}).catch(function(error) { next(error);});
 };
