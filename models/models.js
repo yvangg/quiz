@@ -26,11 +26,6 @@ var sequelize = new Sequelize(DB_name, user, pwd,
   }      
 );
 
-
-var sequelize = new Sequelize(null, null, null, 
-					{dialect: "sqlite", storage: "quiz.sqlite"}
-				);
-
 var Quiz = sequelize.import(path.join(__dirname, 'quiz'));
 
 exports.Quiz = Quiz;
