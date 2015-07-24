@@ -43,3 +43,8 @@ table#quizes {
 	margin-right: auto;
 	text-align: center;
 }
+
+#ErrorMsgs{
+	color: #f61;
+	font-size: smaller;
+}
