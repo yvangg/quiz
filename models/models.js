@@ -26,9 +26,17 @@ var sequelize = new Sequelize(DB_name, user, pwd,
   }      
 );
 
+// Importar definicion de la tabla Quiz
 var Quiz = sequelize.import(path.join(__dirname, 'quiz'));
 
+// Importar definicion de la tabla Comment
+var Comment = sequelize.import(path.join(__dirname, 'comment'));
+
+Comment.belongsTo(Quiz);
+Quiz.hasMany(Comment);
+
 exports.Quiz = Quiz;
+exports.Comment = Comment;
 
 sequelize.sync().then(function() {
 	Quiz.count().then(function(count) {
