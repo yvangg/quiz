@@ -29,6 +29,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(partials());
 
+
+
 app.use(function(req, res, next) {
     if (!req.path.match(/\/login|\/logout/)) {
         req.session.redir = req.path;
@@ -37,6 +39,21 @@ app.use(function(req, res, next) {
     next();
 });
 
+app.use(function(req, res, next) {
+        if(req.session.user) {
+            if(req.session.lastreq) {                
+                var now = new Date().getTime();
+                var time = now - req.session.lastreq;
+                if(time > 10000) {
+                    delete req.session.user;
+                    delete req.session.lastreq;
+                    res.redirect(req.session.redir.toString());
+                }
+            }
+            req.session.lastreq = new Date().getTime();
+        }
+    next();
+});
 app.use('/', routes);
 
 // catch 404 and forward to error handler
