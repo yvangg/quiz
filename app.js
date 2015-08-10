@@ -44,7 +44,7 @@ app.use(function(req, res, next) {
             if(req.session.lastreq) {                
                 var now = new Date().getTime();
                 var time = now - req.session.lastreq;
-                if(time > 10000) {
+                if(time > 120000) {
                     delete req.session.user;
                     delete req.session.lastreq;
                     res.redirect(req.session.redir.toString());
